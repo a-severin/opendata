@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Opendata.Process.GrabDataSets": {
+      "commandName": "Project",
+      "commandLineArgs": "34 \"Волгоградская область\" \"http://opendata.volganet.ru/list.csv\""
+    }
+  }
+}
