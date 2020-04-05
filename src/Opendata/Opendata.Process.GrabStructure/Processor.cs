@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using LiteDB;
 using Opendata.Core;
 
-namespace Opendata.Process.GrabMeatadata
+namespace Opendata.Process.GrabStructure
 {
     public class Processor : IDisposable
     {
@@ -19,48 +19,47 @@ namespace Opendata.Process.GrabMeatadata
 
         public async Task Run()
         {
-            var inputs = _db.GetCollection<DatasetInput>().FindAll().ToList();
-
+            var metadataCollection = _db.GetCollection<DatasetMetadata>().FindAll().ToList();
             using var client = new HttpClient();
-            var updated = new List<DatasetInput>();
-            foreach (var input in inputs)
+            var updated = new List<DatasetMetadata>();
+            foreach (var metadata in metadataCollection)
             {
-                if (!string.IsNullOrEmpty(input.ErrorComment))
+                if (!string.IsNullOrEmpty(metadata.ErrorComment))
                 {
                     continue;
                 }
 
-                if (input.IsProcessed)
+                if (metadata.IsProcessed)
                 {
                     continue;
                 }
 
                 try
                 {
-                    var response = await client.GetAsync(input.MetaDataUrl);
+                    var response = await client.GetAsync(metadata.StructureUrl);
                     response.EnsureSuccessStatusCode();
                     var content = await response.Content.ReadAsStringAsync();
 
-                    var metadata = new DatasetMetadata
+                    var structure = new DatasetStructure
                     {
-                        InputId = input.Id,
+                        MetadataId = metadata.Id,
                         ErrorComment = string.Empty
                     };
-                    metadata.ParseContent(content);
+                    structure.ParseContent(content);
 
-                    input.IsProcessed = string.IsNullOrEmpty(metadata.ErrorComment);
-                    _db.GetCollection<DatasetMetadata>().Insert(metadata);
+                    metadata.IsProcessed = string.IsNullOrEmpty(structure.ErrorComment);
+                    _db.GetCollection<DatasetStructure>().Insert(structure);
                 }
                 catch (Exception e)
                 {
-                    input.ErrorComment = e.Message;
-                    input.IsProcessed = false;
+                    metadata.IsProcessed = false;
+                    metadata.ErrorComment = e.Message;
                 }
 
-                updated.Add(input);
+                updated.Add(metadata);
             }
 
-            _db.GetCollection<DatasetInput>().Upsert(updated);
+            _db.GetCollection<DatasetMetadata>().Upsert(updated);
         }
 
         public void Dispose()

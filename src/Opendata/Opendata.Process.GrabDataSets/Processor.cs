@@ -47,8 +47,6 @@ namespace Opendata.Process.GrabDataSets
                     continue;
                 }
 
-                
-
                 var input = new DatasetInput
                 {
                     RegionCode = _regionCode,

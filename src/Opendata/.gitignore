@@ -36,5 +36,5 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-/_ReSharper.Caches/ReSharperPlatformVs16193_398b7d02.pony.00
+/_ReSharper.Caches
 *.db
