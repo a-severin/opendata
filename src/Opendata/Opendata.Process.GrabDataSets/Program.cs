@@ -10,7 +10,7 @@ namespace Opendata.Process.GrabDataSets
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Start processing");
-            using var processor = new Processor(@"C:\GitHub\opendata\tmp\opendata.db", args[0], args[1], args[2]);
+            using var processor = new Processor(args[0], args[1], args[2], args[3]);
             await processor.Run();
             Console.WriteLine("Finish processing");
         }

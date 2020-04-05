@@ -2,7 +2,7 @@
   "profiles": {
     "Opendata.Process.GrabDataSets": {
       "commandName": "Project",
-      "commandLineArgs": "34 \"Волгоградская область\" \"http://opendata.volganet.ru/list.csv\""
+      "commandLineArgs": "\"C:\\GitHub\\opendata\\tmp\\opendata.db\" 34 \"Волгоградская область\" \"http://opendata.volganet.ru/list.csv\""
     }
   }
 }

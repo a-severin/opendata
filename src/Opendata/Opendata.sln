@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Process.GrabStruct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Process.GrabData", "Opendata.Process.GrabData\Opendata.Process.GrabData.csproj", "{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Report.Errors", "Opendata.Report.Errors\Opendata.Report.Errors.csproj", "{5F3ECA28-412B-4F4E-9A48-B67105390ABC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

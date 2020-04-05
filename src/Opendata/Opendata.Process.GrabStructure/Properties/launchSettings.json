@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Opendata.Process.GrabStructure": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\GitHub\\opendata\\tmp\\opendata.db\""
+    }
+  }
+}

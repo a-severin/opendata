@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Opendata.Process.GrabMeatadata": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\GitHub\\opendata\\tmp\\opendata.db\""
+    }
+  }
+}

@@ -16,7 +16,7 @@ namespace Opendata.Core
             try
             {
                 var lines = content.Split('\n', StringSplitOptions.RemoveEmptyEntries);
-                Fields = new List<DatasetField>();
+                Fields = new List<DatasetField>(lines.Length);
                 if (lines.Length <= 1)
                 {
                     ErrorComment = "Empty structure";
