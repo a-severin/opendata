@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Process.GrabStructure", "Opendata.Process.GrabStructure\Opendata.Process.GrabStructure.csproj", "{57A4AB3E-F273-4A0C-AC7B-E69FE0D7C15E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Process.GrabData", "Opendata.Process.GrabData\Opendata.Process.GrabData.csproj", "{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{57A4AB3E-F273-4A0C-AC7B-E69FE0D7C15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57A4AB3E-F273-4A0C-AC7B-E69FE0D7C15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57A4AB3E-F273-4A0C-AC7B-E69FE0D7C15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D83747B-B5E6-4079-8524-A52B0EDF5CB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
