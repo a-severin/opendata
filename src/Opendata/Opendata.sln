@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Process.GrabData",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opendata.Report.Errors", "Opendata.Report.Errors\Opendata.Report.Errors.csproj", "{5F3ECA28-412B-4F4E-9A48-B67105390ABC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Opendata.Web.Client", "Opendata.Web.Client\Opendata.Web.Client.csproj", "{5F404802-04F2-483A-85EE-48F4D75363A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3ECA28-412B-4F4E-9A48-B67105390ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F404802-04F2-483A-85EE-48F4D75363A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F404802-04F2-483A-85EE-48F4D75363A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F404802-04F2-483A-85EE-48F4D75363A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F404802-04F2-483A-85EE-48F4D75363A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
