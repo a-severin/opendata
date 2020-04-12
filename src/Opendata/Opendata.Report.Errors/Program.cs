@@ -8,9 +8,9 @@ using Opendata.Core;
 
 namespace Opendata.Report.Errors
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Start report");

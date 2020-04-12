@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Opendata.Process.GrabMeatadata
 {
-    class Program
+    internal class Program
     {
         public static async Task Main(string[] args)
         {

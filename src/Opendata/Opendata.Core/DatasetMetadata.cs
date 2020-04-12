@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
 
 namespace Opendata.Core
 {
     public class DatasetMetadata
     {
+        public string DataUrl { get; set; }
+        public string ErrorComment { get; set; }
         public int Id { get; set; }
         public int InputId { get; set; }
-        public string DataUrl { get; set; }
-        public string StructureUrl { get; set; }
-        public Dictionary<string, string> Properties { get; set; }
-        public string ErrorComment { get; set; }
         public bool IsProcessed { get; set; }
+        public Dictionary<string, string> Properties { get; set; }
+        public string StructureUrl { get; set; }
 
         public void ParseContent(string content)
         {

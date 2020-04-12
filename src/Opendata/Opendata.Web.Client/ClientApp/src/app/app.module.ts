@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RegionsComponent } from './regions/regions.component';
+import { DatasetsComponent } from './datasets/datasets.component';
+import { DatasetDescriptionComponent } from './dataset-description/dataset-description.component';
+import { DatasetContentComponent } from './dataset-content/dataset-content.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegionsComponent,
+    DatasetsComponent,
+    DatasetDescriptionComponent,
+    DatasetContentComponent
   ],
   imports: [
     BrowserModule,

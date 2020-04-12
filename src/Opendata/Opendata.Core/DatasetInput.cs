@@ -4,13 +4,13 @@ namespace Opendata.Core
 {
     public class DatasetInput
     {
+        public string ErrorComment { get; set; }
         public int Id { get; set; }
-        public string RegionCode { get; set; }
-        public string RegionName { get; set; }
-        public string RawData { get; set; }
         public bool IsProcessed { get; set; }
         public string MetaDataUrl { get; set; }
-        public string ErrorComment { get; set; }
+        public string RawData { get; set; }
+        public string RegionCode { get; set; }
+        public string RegionName { get; set; }
         public string SubsetCode { get; set; }
         public string SubsetName { get; set; }
 

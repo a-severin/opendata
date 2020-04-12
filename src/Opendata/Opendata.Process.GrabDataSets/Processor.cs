@@ -8,10 +8,10 @@ namespace Opendata.Process.GrabDataSets
 {
     public class Processor : IDisposable
     {
+        private readonly LiteDatabase _db;
         private readonly string _regionCode;
         private readonly string _regionName;
         private readonly string _url;
-        private readonly LiteDatabase _db;
 
         public Processor(string pathToDatabase, string regionCode, string regionName, string url)
         {
@@ -19,6 +19,11 @@ namespace Opendata.Process.GrabDataSets
             _regionName = regionName;
             _url = url;
             _db = new LiteDatabase(pathToDatabase);
+        }
+
+        public void Dispose()
+        {
+            _db?.Dispose();
         }
 
         public async Task Run()
@@ -55,16 +60,11 @@ namespace Opendata.Process.GrabDataSets
                     IsProcessed = false,
                     ErrorComment = string.Empty
                 };
-                
+
                 input.ParseLine(line);
 
                 collection.Insert(input);
             }
-        }
-
-        public void Dispose()
-        {
-            _db?.Dispose();
         }
     }
 }

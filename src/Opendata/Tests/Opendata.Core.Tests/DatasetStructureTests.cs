@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.Contracts;
-using System.Linq;
-using Xunit;
+﻿using Xunit;
 
 namespace Opendata.Core.Tests
 {

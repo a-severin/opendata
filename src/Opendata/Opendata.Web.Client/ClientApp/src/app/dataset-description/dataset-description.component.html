@@ -1,0 +1,4 @@
+<div *ngIf="description$ | async as description">
+  <p>Описание {{ description.description }}</p>
+  <a [routerLink]="['/content', description.id]">Показать данные</a>
+</div>

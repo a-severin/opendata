@@ -17,6 +17,11 @@ namespace Opendata.Process.GrabMeatadata
             _db = new LiteDatabase(pathToDatabase);
         }
 
+        public void Dispose()
+        {
+            _db?.Dispose();
+        }
+
         public async Task Run()
         {
             var inputs = _db.GetCollection<DatasetInput>().FindAll().ToList();
@@ -61,11 +66,6 @@ namespace Opendata.Process.GrabMeatadata
             }
 
             _db.GetCollection<DatasetInput>().Upsert(updated);
-        }
-
-        public void Dispose()
-        {
-            _db?.Dispose();
         }
     }
 }

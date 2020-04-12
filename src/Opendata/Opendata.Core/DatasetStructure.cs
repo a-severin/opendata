@@ -5,11 +5,11 @@ namespace Opendata.Core
 {
     public class DatasetStructure
     {
-        public int Id { get; set; }
-        public int MetadataId { get; set; }
         public string ErrorComment { get; set; }
-        public bool IsProcessed { get; set; }
         public List<DatasetField> Fields { get; set; }
+        public int Id { get; set; }
+        public bool IsProcessed { get; set; }
+        public int MetadataId { get; set; }
 
         public void ParseContent(string content)
         {

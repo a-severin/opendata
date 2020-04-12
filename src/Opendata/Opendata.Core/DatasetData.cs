@@ -6,10 +6,10 @@ namespace Opendata.Core
 {
     public class DatasetData
     {
-        public int Id { get; set; }
-        public int StructureId { get; set; }
         public string ErrorComment { get; set; }
+        public int Id { get; set; }
         public List<DatasetRow> Rows { get; set; }
+        public int StructureId { get; set; }
 
         public void ParseContent(string content, List<DatasetField> fields)
         {

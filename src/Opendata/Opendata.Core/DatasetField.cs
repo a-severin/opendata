@@ -5,10 +5,10 @@ namespace Opendata.Core
 {
     public class DatasetField
     {
-        public string Name { get; set; }
         public string EngDescription { get; set; }
-        public string RusDescription { get; set; }
         public string Format { get; set; }
+        public string Name { get; set; }
+        public string RusDescription { get; set; }
 
         public void ParseLine(string line)
         {
@@ -38,7 +38,8 @@ namespace Opendata.Core
                 if (match.Success)
                 {
                     var firstCyrillicCharPosition = match.Index;
-                    var nearestCommadPosition = descriptionsPart.Substring(0, firstCyrillicCharPosition).LastIndexOf(',');
+                    var nearestCommadPosition =
+                        descriptionsPart.Substring(0, firstCyrillicCharPosition).LastIndexOf(',');
                     EngDescription = descriptionsPart
                         .Substring(
                             0,

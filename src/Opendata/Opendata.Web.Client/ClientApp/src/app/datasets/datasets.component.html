@@ -1,0 +1,6 @@
+<h2>Список доступных данных</h2>
+<ul>
+  <li *ngFor="let dataset of datasets$ | async">
+    <a [routerLink]="['/description', dataset.id]">{{dataset.title}}</a>
+  </li>
+</ul>

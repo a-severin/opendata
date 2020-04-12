@@ -4,6 +4,21 @@ namespace Opendata.Core.Tests
 {
     public class DatasetFieldTests
     {
+        public static MatrixTheoryData MatrixData = new MatrixTheoryData();
+
+        [Theory]
+        [MemberData(nameof(MatrixData))]
+        public void ParseLine(string line, string name, string eng, string rus, string format)
+        {
+            var field = new DatasetField();
+            field.ParseLine(line);
+
+            Assert.Equal(name, field.Name);
+            Assert.Equal(eng, field.EngDescription);
+            Assert.Equal(rus, field.RusDescription);
+            Assert.Equal(format, field.Format);
+        }
+
         public class MatrixTheoryData : TheoryData
         {
             public MatrixTheoryData()
@@ -23,21 +38,6 @@ namespace Opendata.Core.Tests
                     "\"Обеспеченность земельными участками, %\"",
                     "float");
             }
-        }
-
-        public static MatrixTheoryData MatrixData = new MatrixTheoryData();
-
-        [Theory]
-        [MemberData(nameof(MatrixData))]
-        public void ParseLine(string line, string name, string eng, string rus, string format)
-        {
-            var field = new DatasetField();
-            field.ParseLine(line);
-
-            Assert.Equal(name, field.Name);
-            Assert.Equal(eng, field.EngDescription);
-            Assert.Equal(rus, field.RusDescription);
-            Assert.Equal(format, field.Format);
         }
     }
 }

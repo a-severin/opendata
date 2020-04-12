@@ -17,6 +17,11 @@ namespace Opendata.Process.GrabData
             _db = new LiteDatabase(pathToDatabase);
         }
 
+        public void Dispose()
+        {
+            _db?.Dispose();
+        }
+
         public async Task Run()
         {
             var structureCollection = _db
@@ -69,11 +74,6 @@ namespace Opendata.Process.GrabData
             _db
                 .GetCollection<DatasetStructure>()
                 .Upsert(updated);
-        }
-
-        public void Dispose()
-        {
-            _db?.Dispose();
         }
     }
 }

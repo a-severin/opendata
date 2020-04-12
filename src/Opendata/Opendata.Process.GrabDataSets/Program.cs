@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Opendata.Process.GrabDataSets
 {
-    class Program
+    internal class Program
     {
         public static async Task Main(string[] args)
         {
