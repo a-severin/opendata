@@ -1,3 +1,4 @@
+import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {of, Observable} from 'rxjs';
 import {Dataset} from './model/dataset';
@@ -9,10 +10,7 @@ import {DatasetDescription} from './model/dataset-description';
 })
 export class DataService {
 
-  private regions: Region[] = [
-    {code: '34', title: 'Волгоградская область'}
-  ];
-
+  regionsUrl = 'api/regions';
   private datasets: Map<string, Dataset[]> = new Map<string, Dataset[]>(
     [
       ['34', [
@@ -22,7 +20,6 @@ export class DataService {
       ]]
     ]
   );
-
   private descriptions: Map<string, DatasetDescription> = new Map<string, DatasetDescription>(
     [
       ['1', {id: '1', description: 'Описание данных Главы муниципалитетов'}],
@@ -31,11 +28,11 @@ export class DataService {
     ]
   );
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   getRegions(): Observable<Region[]> {
-    return of(this.regions);
+    return this.http.get<Region[]>(this.regionsUrl);
   }
 
   getDatasets(regionCode: string): Observable<Dataset[]> {

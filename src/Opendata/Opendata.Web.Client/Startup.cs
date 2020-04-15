@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Opendata.Web.Client.Repository;
 
 namespace Opendata.Web.Client
 {
@@ -36,6 +37,10 @@ namespace Opendata.Web.Client
             {
                 app.UseSpaStaticFiles();
             }
+            
+            // Register the Swagger generator and the Swagger UI middlewares
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseRouting();
 
@@ -63,9 +68,27 @@ namespace Opendata.Web.Client
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IDataRepository>(provider => new DataRepository());
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
+            
+            // Register the Swagger services
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "Opendata";
+                    document.Info.Description = "Opendata web API";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Anatoliy Severin",
+                        Email = "severin.a.u@gmail.com",
+                        Url = "https://a-severin.github.io"
+                    };
+                };
+            });
         }
     }
 }
