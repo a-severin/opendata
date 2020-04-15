@@ -1,7 +1,10 @@
 <h2>Данные регионов:</h2>
-<ul>
-  <li *ngFor="let region of regions$ | async">
-    <a [routerLink]="['/region', region.code]">
+<ul class="list-group">
+  <li *ngFor="let region of regions$ | async"
+      class="list-group-item">
+    <a [routerLink]="['/region', region.code]"
+       class="btn btn-link"
+       role="button">
       {{region.code}} - {{region.title}}
     </a>
   </li>
